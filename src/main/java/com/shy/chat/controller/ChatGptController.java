@@ -35,7 +35,7 @@ public class ChatGptController {
     static {
         ObjectMapper mapper = OpenAiService.defaultObjectMapper();
         Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 7890));
-        OkHttpClient client = OpenAiService.defaultClient(TOKEN, Duration.ofSeconds(100)).newBuilder().proxy(proxy).build();
+        OkHttpClient client = OpenAiService.defaultClient(TOKEN, Duration.ofSeconds(10000)).newBuilder().proxy(proxy).build();
         Retrofit retrofit = OpenAiService.defaultRetrofit(client, mapper);
         OpenAiApi api = retrofit.create(OpenAiApi.class);
         service = new OpenAiService(api);
