@@ -1,0 +1,2 @@
+# shy-chatgpt
+chatgpt
